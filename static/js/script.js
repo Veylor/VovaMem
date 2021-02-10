@@ -20,38 +20,38 @@ document.getElementById('sqr').onclick = function(event) {
 }
 
 function chekWinner() {
-	const vert = {0:'', 1:'', 2:''}
-	const hor = {0:'', 3:'', 6:''}
-	const diag = {0:'', 2:''}
+	const vert = [0, 1, 2,]
+	const hor = [0, 3, 6]
+	const diag = [0, 2]
 	let count = 4
 
-	for (let i in vert) {
+	for (let j,i in vert) {
 		i = parseInt(i)
 		if (allsqr[i].innerHTML == allsqr[i+3].innerHTML && allsqr[i].innerHTML == allsqr[i+6].innerHTML && allsqr[i].innerHTML != ''){
 			if(allsqr[i].innerHTML == 'O') {
-				res.innerHTML = '<img src="icon/zero.png" height="70px"> Перемогли ' + allsqr[i].innerHTML + '!<img src="icon/zero.png" height="70px">';
+				res.innerHTML = '<img src="../icon/zero.png" height="70px"> Перемогли ' + allsqr[i].innerHTML + '!<img src="icon/zero.png" height="70px">';
 			}
 			else {
-				res.innerHTML = '<img src="icon/cross.png" height="70px"> Перемогли ' + allsqr[i].innerHTML + '!<img src="icon/cross.png" height="70px">'
+				res.innerHTML = '<img src="../icon/cross.png" height="70px"> Перемогли ' + allsqr[i].innerHTML + '!<img src="icon/cross.png" height="70px">'
 			}
 			isDraw = false
 			isWon = true
 		}
 	}
-	for (let i in hor) {
+	for (let j,i in hor) {
 		i = parseInt(i)
 		if (allsqr[i].innerHTML == allsqr[i+1].innerHTML && allsqr[i].innerHTML == allsqr[i+2].innerHTML && allsqr[i].innerHTML != ''){
 			if(allsqr[i].innerHTML == 'O') {
-				res.innerHTML = '<img src="icon/zero.png" height="70px"> Перемогли ' + allsqr[i].innerHTML + '!<img src="icon/zero.png" height="70px">';
+				res.innerHTML = '<img src="../icon/zero.png" height="70px"> Перемогли ' + allsqr[i].innerHTML + '!<img src="icon/zero.png" height="70px">';
 			}
 			else {
-				res.innerHTML = '<img src="icon/cross.png" height="70px"> Перемогли ' + allsqr[i].innerHTML + '!<img src="icon/cross.png" height="70px">'
+				res.innerHTML = '<img src="../icon/cross.png" height="70px"> Перемогли ' + allsqr[i].innerHTML + '!<img src="icon/cross.png" height="70px">'
 			}
 			isDraw = false
 			isWon = true
 		}
 	}
-	for (let i in diag) {
+	for (let j,i in diag) {
 		i = parseInt(i)
 		if (allsqr[i].innerHTML == allsqr[i+count].innerHTML && allsqr[i].innerHTML == allsqr[i+(count*2)].innerHTML && allsqr[i].innerHTML != ''){
 			if(allsqr[i].innerHTML == 'O') {
